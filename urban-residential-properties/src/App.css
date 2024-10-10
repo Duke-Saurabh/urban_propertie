@@ -1,0 +1,13 @@
+.container{
+  height:100vh;
+  width:auto;
+  overflow-y: hidden;
+}
+
+/* .header-container{
+  height: 60px;
+} */
+
+/* .main-container{
+  height: calc(100vh - 60px);
+} */

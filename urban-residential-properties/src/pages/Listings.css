@@ -1,0 +1,30 @@
+/* src/pages/Listings.css */
+
+.listings-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .property-list {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+  }
+  
+  .property-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .property-item h3 {
+    margin: 0 0 5px;
+  }
+  
+  .property-item p {
+    margin: 0 0 10px;
+  }
+  
