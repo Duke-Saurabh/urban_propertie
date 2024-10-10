@@ -16,7 +16,7 @@ const Login = () => {
     e.preventDefault();
     console.log('logging clicked')
     try {
-      const response = await axios.post('http://localhost:3000/api/auth/login', { email, password });
+      const response = await axios.post('/api/auth/login', { email, password });
       
       console.log('Login successful', response.data);
       // Show a welcome message
