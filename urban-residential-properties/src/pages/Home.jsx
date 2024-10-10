@@ -1,9 +1,15 @@
-// src/pages/Home.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css';
+import { useProperties } from '../context/propertiesContext';
+import FilterComponent from '../components/Filter';
+
 const Home = () => {
-    
-    
+  const { properties, loading, error } = useProperties(); // Fetch properties from context
+  const [filteredProperties, setFilteredProperties] = useState(properties);
+
+  useEffect(() => {
+    setFilteredProperties(properties); // Update filtered properties when properties change
+  }, [properties]);
 
   return (
     <div className="home-container">
@@ -11,32 +17,37 @@ const Home = () => {
         <h1>Urban Residential Properties</h1>
         <p>Your dream home is just a click away!</p>
       </header>
-
+      <FilterComponent filteredData={properties} setFilteredData={setFilteredProperties} />
       <main className="home-content">
         <section className="featured-properties">
           <h2>Featured Properties</h2>
-          <div className="property-cards">
-            <div className="property-card">
-              <img src="https://via.placeholder.com/300" alt="Property 1" />
-              <h3>Luxury Apartment</h3>
-              <p>Located in the city center with stunning views.</p>
-              <button className="btn">View Details</button>
-            </div>
 
-            <div className="property-card">
-              <img src="https://via.placeholder.com/300" alt="Property 2" />
-              <h3>Cozy Cottage</h3>
-              <p>A beautiful cottage surrounded by nature.</p>
-              <button className="btn">View Details</button>
+          {/* Display loading, error, or properties */}
+          {loading ? (
+            <p>Loading properties...</p>
+          ) : error ? (
+            <p>{error}</p>
+          ) : (
+            <div className="property-cards">
+              {filteredProperties.length > 0 ? (
+                filteredProperties.map((property) => (
+                  <div key={property._id} className="property-card">
+                    <img
+                      src={property.imageUrl || "https://via.placeholder.com/300"} // Show placeholder if no image
+                      alt={property.title}
+                    />
+                    <h3>{property.title}</h3>
+                    <p>{property.description}</p>
+                    <p><strong>Price:</strong> ${property.price}</p>
+                    <p><strong>Location:</strong> {property.location}</p>
+                    <button className="btn">View Details</button>
+                  </div>
+                ))
+              ) : (
+                <p>No properties available</p>
+              )}
             </div>
-
-            <div className="property-card">
-              <img src="https://via.placeholder.com/300" alt="Property 3" />
-              <h3>Modern Villa</h3>
-              <p>A spacious villa with a private pool.</p>
-              <button className="btn">View Details</button>
-            </div>
-          </div>
+          )}
         </section>
 
         <section className="about">

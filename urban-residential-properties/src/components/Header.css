@@ -1,138 +1,38 @@
-/* src/components/Header.css */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  
+.header-container{
+    /* height:60px; */
+    /* overflow-y: hidden; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: space-between; */
 }
 
-body {
-    padding-top: 80px; /* Adjust according to header height */
+.toggle-button{
+    position: absolute;
+    top:10px;
+    left:10px
+}
+.header-logo{
+    text-align: center;
+    margin: 10px;
+    display: inline-b;
 }
 
-.header {
-    overflow-y: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px; /* Set a height for the header */
-    background-color: #35424a; /* Dark background */
-    color: #ffffff;
-    z-index: 1000; /* Keep on top */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    transition: background-color 0.3s; /* Smooth background transition */
+.header-content{
+    width: 100vw;
 }
 
-.header.scrolled {
-    background-color: #2c2f33; /* Darker background on scroll */
+.navigation-item{
+    width: 100vw;
+    /* display: none; */
 }
 
-.header-container {
-    max-width: 1200px; /* Max width for large screens */
-    margin: 0 auto;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-.nav {
-    display: flex; /* Horizontal layout */
-}
-
-.nav-list {
-    list-style: none;
-    display: flex; /* Horizontal layout */
-    gap: 20px; /* Space between items */
-}
-
-.nav-item a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 1rem;
-    position: relative; /* Position for pseudo-element */
-    transition: color 0.3s;
-}
-
-.nav-item a::after {
-    content: '';
+.open{
     display: block;
-    width: 0;
-    height: 2px;
-    background: #f4f4f4; /* Underline color */
-    transition: width 0.3s;
-    position: absolute;
-    bottom: -2px; /* Position it below text */
-    left: 50%;
-    transform: translateX(-50%);
 }
-
-.nav-item a:hover {
-    color: #f4f4f4; /* Lighter on hover */
-}
-
-.nav-item a:hover::after {
-    width: 100%; /* Expand underline on hover */
-}
-
-/* Hamburger menu styles */
-.menu-toggle {
+.close{
     display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    position: absolute;
-    right:10px;
-    top:15px;
 }
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .nav {
-        display: none; /* Hide nav items on smaller screens */
-        position: absolute; /* Position dropdown */
-        top: 60px; /* Below the header */
-        left: 0;
-        right: 0;
-        background-color: #35424a; /* Background same as header */
-        flex-direction: column; /* Stack vertically */
-        padding: 15px 0; /* Vertical padding */
-        z-index: 999; /* Ensure it stays above other content */
-    }
-
-    .nav.open {
-        display: flex; /* Show when open */
-    }
-
-    .menu-toggle {
-        display: block; /* Show hamburger icon */
-    }
-}
-
-@media (max-width: 480px) {
-    .header-container {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align left */
-    }
-
-    .logo {
-        margin-bottom: 10px; /* Space between logo and menu */
-    }
-
-    .nav-list {
-        flex-direction: column; /* Stack nav items vertically */
-        gap: 10px; /* Space between items */
-       
-    }
-
-    .nav-item a {
-        font-size: 0.9rem; /* Smaller font size */
-        display: block;
-    }
+.navigation-item:hover{
+    text-decoration-line:2px white;
 }

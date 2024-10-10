@@ -9,20 +9,23 @@ const Header = () => {
     setIsNavOpen((prev) => !prev);
   };
 
+  console.log("isNavOpen",isNavOpen)
   return (
-    <header className="header">
-     <div className="menu-toggle" onClick={toggleNav}>
-          &#9776; 
-        </div>
-      <div className="header-container">   
-        <div className="logo">Urban Properties</div>
-        <nav className={`nav ${isNavOpen ? 'open' : ''}`}>
-          <ul className="nav-list">
-            <li className="nav-item"><a href="/home">Home</a></li>
-            <li className="nav-item"><a href="/listings">Listings</a></li>
-            <li className="nav-item"><a href="/profile">Profile</a></li>
-            <li className="nav-item"><a href="/login">Login</a></li>
-            <li className="nav-item"><a href="/signup">Signup</a></li>
+    <header className="header-container">
+      <div className="toggle-button" onClick={toggleNav}>
+        &#9776; 
+      </div>
+      <div className="header-logo">Urban Properties</div>
+      <div className="header-content">   
+        
+        <nav className={`navigation ${isNavOpen ? 'open' : 'close'}`}>
+          <ul className="navigation-list">
+            <li className="navigation-item"><a href="/home">Home</a></li>
+            <li className="navigation-item"><a href="/AddProperty">Sell Properties</a></li>
+            <li className="navigation-item"><a href="/listings">Listings</a></li>
+            <li className="navigation-item"><a href="/profile">Profile</a></li>
+            <li className="navigation-item"><a href="/login">Login</a></li>
+            <li className="navigation-item"><a href="/signup">Signup</a></li>
           </ul>
         </nav>
       </div>

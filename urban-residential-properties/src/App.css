@@ -4,9 +4,13 @@
   overflow-y: hidden;
 }
 
-/* .header-container{
-  height: 60px;
-} */
+.header-container{
+  height: auto;
+  position: fixed;
+  top:0;
+  background-color: blue;
+  width: 100%;
+}
 
 /* .main-container{
   height: calc(100vh - 60px);

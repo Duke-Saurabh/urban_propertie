@@ -24,7 +24,9 @@ const properties = [
 // Get all properties
 exports.getProperties = async (req, res) => {
   try {
-    // const properties = await Property.find();
+    console.log("frtching all properties")
+    const properties = await Property.find();
+    console.log("fetching properties",properties)
     res.status(200).json(properties);
   } catch (error) {
     res.status(500).json({ message: 'Server error' });
@@ -46,11 +48,16 @@ exports.getPropertyById = async (req, res) => {
   }
 };
 
-// Create new property
-exports.createProperty = async (req, res) => {
-  const { title, price, description, location, type, imageUrl } = req.body;
 
+exports.createProperty = async (req, res) => {
+  const { title, price, description, location, type } = req.body;
+  
   try {
+    let imageUrl = '';
+    if (req.file) {
+      imageUrl = req.file.path;
+    }
+
     const newProperty = new Property({
       title,
       price,
@@ -59,9 +66,12 @@ exports.createProperty = async (req, res) => {
       type,
       imageUrl
     });
+
     await newProperty.save();
+    console.log("uploaded")
     res.status(201).json(newProperty);
   } catch (error) {
+    console.error('Error creating property:', error);
     res.status(500).json({ message: 'Server error' });
   }
 };

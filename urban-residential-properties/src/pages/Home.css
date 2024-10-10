@@ -1,148 +1,177 @@
 /* src/pages/Home.css */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding-top: 60px; /* This padding should match the height of your fixed header */
-  }
-  
-  .home-container {
-    /* max-width: 1200px; */
-    width: 100vw;
-    margin: 0 auto;
-    padding: 20px;
-    /* height: calc(100vh - 60px); */ /* This line is commented out to allow the container to grow with content */
-  }
-  
-  .home-header {
-    text-align: center;
-    background: #35424a;
-    color: #ffffff;
-    padding: 50px 20px;
-    border-radius: 10px;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  line-height: 1.6;
+  padding-top: 80px; /* Adjust according to fixed header height */
+}
+
+.home-container {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.home-header {
+  text-align: center;
+  background: linear-gradient(to right, #456072, #35424a); /* Add gradient for better visual */
+  color: #ffffff;
+  padding: 50px 20px;
+  border-radius: 10px;
+}
+
+.home-header h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.home-header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.home-content {
+  margin: 40px 0;
+}
+
+.featured-properties {
+  margin-bottom: 40px;
+}
+
+.featured-properties h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #35424a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.property-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.property-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  margin: 10px;
+  max-width: 300px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+  flex: 1 1 calc(33% - 20px);
+}
+
+.property-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.property-card img {
+  width: 100%;
+  height: 200px; /* Ensure consistent image height */
+  object-fit: cover; /* Ensure images are properly scaled */
+}
+
+.property-card h3 {
+  margin: 15px;
+  font-size: 1.5rem;
+  color: #35424a;
+}
+
+.property-card p {
+  margin: 0 15px 15px;
+  color: #555;
+}
+
+.btn {
+  display: block;
+  margin: 15px auto;
+  padding: 10px 20px;
+  background: #35424a;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background: #456072;
+  transform: translateY(-2px); /* Subtle hover effect */
+}
+
+.about {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.about h2 {
+  margin-bottom: 20px;
+  color: #35424a;
+  text-transform: uppercase;
+}
+
+.about p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.home-footer {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 0;
+  background-color: #35424a;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.home-footer p {
+  margin: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
   .home-header h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
-  
+
   .home-header p {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
-  
-  .home-content {
-    margin: 40px 0;
-  }
-  
-  .featured-properties {
-    margin-bottom: 40px;
-  }
-  
-  .featured-properties h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .property-cards {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping for responsiveness */
-    justify-content: space-around;
-  }
-  
+
   .property-card {
-    background: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    max-width: 300px;
-    overflow: hidden;
-    transition: transform 0.3s;
-    flex: 1 1 calc(33% - 20px); /* Flex-grow, flex-shrink, and flex-basis for responsiveness */
+    flex: 1 1 calc(50% - 20px);
   }
-  
-  .property-card:hover {
-    transform: translateY(-5px);
+}
+
+@media (max-width: 480px) {
+  .property-card {
+    flex: 1 1 100%;
   }
-  
-  .property-card img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .property-card h3 {
-    margin: 15px;
+
+  .home-header h1 {
     font-size: 1.5rem;
   }
-  
-  .property-card p {
-    margin: 0 15px 15px;
-    color: #555;
+
+  .home-header p {
+    font-size: 0.9rem;
   }
-  
+
   .btn {
-    display: block;
-    margin: 15px auto;
-    padding: 10px 20px;
-    background: #35424a;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
+    width: 100%;
   }
-  
-  .btn:hover {
-    background: #456072;
-  }
-  
-  .about {
-    text-align: center;
-    margin: 40px 0;
-  }
-  
-  .about h2 {
-    margin-bottom: 20px;
-  }
-  
-  .home-footer {
-    text-align: center;
-    margin-top: 40px;
-    color: #777;
-  }
-  
-  /* Media Queries for Responsiveness */
-  @media (max-width: 768px) {
-    .home-header h1 {
-      font-size: 2rem; /* Smaller font size on mobile */
-    }
-  
-    .home-header p {
-      font-size: 1rem; /* Smaller font size on mobile */
-    }
-  
-    .property-card {
-      flex: 1 1 calc(50% - 20px); /* Two cards per row on smaller screens */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .property-card {
-      flex: 1 1 100%; /* One card per row on very small screens */
-    }
-  
-    .home-header h1 {
-      font-size: 1.5rem; /* Even smaller font size on very small devices */
-    }
-  
-    .home-header p {
-      font-size: 0.9rem; /* Adjusted font size */
-    }
-  }
-  
+}
