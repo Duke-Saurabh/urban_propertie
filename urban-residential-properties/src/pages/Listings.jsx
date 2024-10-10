@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './Listings.css'; // Optional: Import CSS for styling
+import './Listings.css'; 
 
 const Listings = () => {
   const [properties, setProperties] = useState([]);
-  const [loading, setLoading] = useState(true); // To manage loading state
-  const [error, setError] = useState(null); // To manage error state
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchProperties = async () => {
@@ -15,7 +15,7 @@ const Listings = () => {
       } catch (err) {
         setError('Failed to fetch properties.');
       } finally {
-        setLoading(false); // Set loading to false once fetch is done
+        setLoading(false); 
       }
     };
 
@@ -23,11 +23,11 @@ const Listings = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>; // Display a loading message
+    return <div>Loading...</div>; 
   }
 
   if (error) {
-    return <div>{error}</div>; // Display error message
+    return <div>{error}</div>; 
   }
 
   return (
@@ -39,7 +39,7 @@ const Listings = () => {
             <h3>{property.title}</h3>
             <p>{property.description}</p>
             <p>Price: {property.price}</p>
-            <a href={`/property/${property._id}`}>View Details</a> {/* Link to property details */}
+            <a href={`/property/${property._id}`}>View Details</a>
           </li>
         ))}
       </ul>

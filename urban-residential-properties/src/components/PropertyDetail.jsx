@@ -1,12 +1,10 @@
-// src/components/PropertyDetail.jsx
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import './PropertyDetail.css'; // Import CSS for styling
+import './PropertyDetail.css'; 
 
 const PropertyDetail = () => {
   const { id } = useParams();
 
-  // Simulate property details based on the property id
   const propertyDetails = {
     1: {
       title: 'Beautiful House',
@@ -29,10 +27,9 @@ const PropertyDetail = () => {
       features: ['5 Bedrooms', '4 Bathrooms', 'Swimming Pool', 'Garden'],
       price: '$1,200,000',
     },
-    // Add more dummy properties as needed
   };
 
-  const property = propertyDetails[id] || propertyDetails[1]; // Fallback to the first property if id not found
+  const property = propertyDetails[id] || propertyDetails[1];
 
   return (
     <div className="property-detail">

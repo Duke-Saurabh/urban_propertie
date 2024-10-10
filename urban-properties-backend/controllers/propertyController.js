@@ -21,7 +21,6 @@ const properties = [
   },
 ];
 
-// Get all properties
 exports.getProperties = async (req, res) => {
   try {
     console.log("frtching all properties")
@@ -33,7 +32,6 @@ exports.getProperties = async (req, res) => {
   }
 };
 
-// Get property by ID
 exports.getPropertyById = async (req, res) => {
   const { id } = req.params;
 

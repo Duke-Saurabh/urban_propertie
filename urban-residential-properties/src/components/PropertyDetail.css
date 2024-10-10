@@ -38,7 +38,6 @@
     background: #456072;
   }
   
-  /* Media Queries for Responsiveness */
   @media (max-width: 768px) {
     .property-detail {
       padding: 15px;
@@ -51,7 +50,7 @@
     }
   
     .contact-button {
-      width: 100%; /* Full width on smaller screens */
+      width: 100%; 
     }
   }
   

@@ -1,8 +1,6 @@
 const { User, generateAccessToken, generateRefreshToken } = require('../models/User'); // Ensure the path is correct
 const bcrypt = require('bcryptjs');
-// Ensure APIError is properly imported
 
-// Sign up user
 exports.signup = async (req, res) => {
     const { fullName, email, password } = req.body;
 
@@ -29,7 +27,6 @@ exports.signup = async (req, res) => {
     }
 };
 
-// Login user
 exports.login = async (req, res) => {
     const { email, password } = req.body;
    
@@ -63,8 +60,7 @@ exports.login = async (req, res) => {
     }
 };
 
-// Get user profile (protected route)
 exports.getProfile = (req, res) => {
-    const user = req.user; // Assumes user is populated by middleware
+    const user = req.user; 
     res.status(200).json({ user });
 };

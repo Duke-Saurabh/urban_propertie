@@ -4,11 +4,11 @@ import { useProperties } from '../context/propertiesContext';
 import FilterComponent from '../components/Filter';
 
 const Home = () => {
-  const { properties, loading, error } = useProperties(); // Fetch properties from context
+  const { properties, loading, error } = useProperties(); 
   const [filteredProperties, setFilteredProperties] = useState(properties);
 
   useEffect(() => {
-    setFilteredProperties(properties); // Update filtered properties when properties change
+    setFilteredProperties(properties); 
   }, [properties]);
 
   return (
@@ -33,7 +33,7 @@ const Home = () => {
                 filteredProperties.map((property) => (
                   <div key={property._id} className="property-card">
                     <img
-                      src={property.imageUrl || "https://via.placeholder.com/300"} // Show placeholder if no image
+                      src={property.imageUrl || "https://via.placeholder.com/300"} 
                       alt={property.title}
                     />
                     <h3>{property.title}</h3>

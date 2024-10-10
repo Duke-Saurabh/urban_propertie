@@ -1,4 +1,4 @@
-/* src/pages/Listings.css */
+
 
 .listings-container {
     margin: 20px;
@@ -9,7 +9,7 @@
   }
   
   .property-list {
-    list-style-type: none; /* Remove default list styling */
+    list-style-type: none; 
     padding: 0;
   }
   

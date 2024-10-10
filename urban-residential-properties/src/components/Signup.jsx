@@ -1,7 +1,7 @@
-// src/components/Signup.jsx
+
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Signup.css'; // Import the CSS for styling
+import './Signup.css'; 
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/authContext';
 
@@ -15,7 +15,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/api/auth/signup', {
+      const response = await axios.post('/api/auth/signup', {
         email: userEmail,
         password: userPassword,
         fullName: userFullName,
@@ -28,7 +28,7 @@ const Signup = () => {
       alert(`Welcome, ${response.data.user.fullName}! You have signed up successfully.`);
     } catch (error) {
       console.error('Signup failed', error);
-      alert('Signup failed. Please try again.'); // You can customize this message based on the error
+      alert('Signup failed. Please try again.'); 
     }
     // console.log('signup clicked')
     // createUser(userEmail,userPassword,userFullName);

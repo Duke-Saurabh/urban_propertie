@@ -1,8 +1,7 @@
-// src/components/PropertyList.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types'; // Import PropTypes
-import './PropertyList.css'; // Import CSS for styling
+import PropTypes from 'prop-types'; 
+import './PropertyList.css'; 
 
 const PropertyList = ({ properties }) => {
   return (

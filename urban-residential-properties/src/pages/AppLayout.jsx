@@ -2,7 +2,6 @@
 
 import { Outlet } from "react-router-dom";
 
-// import ChatRoom from "../components/ChatRoom";
 
 
 const AppLayout = () => {

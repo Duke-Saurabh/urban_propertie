@@ -1,9 +1,7 @@
-/* src/components/AddProperty.css */
 .addPropertyForm{
     display: flex;
     align-items: center;
     width:100vw;
-    /* margin-top: -50px; */
 }
 form {
     width: 800px;

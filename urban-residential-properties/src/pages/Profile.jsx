@@ -1,8 +1,6 @@
-// src/pages/Profile.jsx
 import React from 'react';
 import PropertyList from '../components/PropertyList';
-import './Profile.css'; // Updated the CSS file name
-
+import './Profile.css'; 
 const Profile = () => {
   const user = {
     name: "John Doe",

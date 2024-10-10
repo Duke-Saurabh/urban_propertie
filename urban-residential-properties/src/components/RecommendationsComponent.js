@@ -6,10 +6,9 @@ const RecommendationsComponent = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch the recommendations when the component is mounted
     const fetchRecommendations = async () => {
       try {
-        const response = await fetch('/recommendations');  // Fetch from backend
+        const response = await fetch('/recommendations');  
         if (!response.ok) {
           throw new Error('Failed to fetch recommendations');
         }

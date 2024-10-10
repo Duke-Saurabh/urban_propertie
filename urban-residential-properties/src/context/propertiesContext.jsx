@@ -1,7 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import axios from "axios"; // Using axios for API requests
-
+import axios from "axios"; 
 const PropertiesContext = createContext();
 
 function PropertiesProvider({ children }) {
@@ -9,13 +8,12 @@ function PropertiesProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Fetch all properties from the backend when the component mounts
   useEffect(() => {
     const fetchProperties = async () => {
       setLoading(true);
       console.log('fetching properties')
       try {
-        const response = await axios.get("/api/properties/"); // Replace with your actual API URL
+        const response = await axios.get("/api/properties/"); 
         setProperties(response.data);
         console.log(response.data)
         setError(null);
@@ -52,9 +50,8 @@ function useProperties() {
   return context;
 }
 
-// Prop validation for PropertiesProvider
 PropertiesProvider.propTypes = {
-  children: PropTypes.node.isRequired, // Ensures `children` is passed and is a React node
+  children: PropTypes.node.isRequired, 
 };
 
 export { useProperties, PropertiesProvider };

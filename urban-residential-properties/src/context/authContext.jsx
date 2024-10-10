@@ -53,9 +53,8 @@ function useAuth() {
   return context;
 }
 
-// Prop validation for AuthProvider
 AuthProvider.propTypes = {
-  children: PropTypes.node.isRequired, // Ensures `children` is passed and is a React node
+  children: PropTypes.node.isRequired,
 };
 
 export { useAuth, AuthProvider, AuthContext };

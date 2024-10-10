@@ -1,7 +1,6 @@
-// src/components/Login.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Login.css'; // Import the new CSS for styling
+import './Login.css'; 
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/authContext';
 
@@ -19,12 +18,10 @@ const Login = () => {
       const response = await axios.post('/api/auth/login', { email, password });
       
       console.log('Login successful', response.data);
-      // Show a welcome message
       
     
 
       alert(`Welcome back, ${response.data.user.fullName}! You have logged in successfully.`);
-      // Store tokens (localStorage, state, etc.)
       const { accessToken, refreshToken } = response.data;
       localStorage.setItem('accessToken', accessToken);
       localStorage.setItem('refreshToken', refreshToken);
@@ -33,15 +30,14 @@ const Login = () => {
   
     } catch (error) {
       console.error('Login failed', error);
-      // Show an alert with the error message
       alert(error.response ? error.response.data.message : 'Login failed. Please try again.');
     }
   };
   
 
   return (
-    <div className="login-wrapper"> {/* New class for login wrapper */}
-      <form onSubmit={handleLogin} className="login-form-container"> {/* New class for login form */}
+    <div className="login-wrapper"> 
+      <form onSubmit={handleLogin} className="login-form-container"> 
         <h2>Login</h2>
         <input
           type="email"
@@ -49,7 +45,7 @@ const Login = () => {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
           required
-          className="login-input email-input" // New class for email input
+          className="login-input email-input" 
         />
         <input
           type="password"
@@ -57,7 +53,7 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
           required
-          className="login-input password-input" // New class for password input
+          className="login-input password-input"
         />
         <button type="submit" className="login-button">Login</button>
         
