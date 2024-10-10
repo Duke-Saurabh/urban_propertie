@@ -15,7 +15,7 @@ function PropertiesProvider({ children }) {
       setLoading(true);
       console.log('fetching properties')
       try {
-        const response = await axios.get("http://localhost:3000/api/properties/"); // Replace with your actual API URL
+        const response = await axios.get("/api/properties/"); // Replace with your actual API URL
         setProperties(response.data);
         console.log(response.data)
         setError(null);
