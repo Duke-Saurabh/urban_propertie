@@ -21,7 +21,7 @@ function AuthProvider({ children }) {
    },[isAuthenticated])
   
   function logout() {
-    localStorage.removeItem("token");
+    localStorage.removeItem("accessToken");
     setIsAuthenticated(false);
     setUser(null);
    alert("Logged Out Successfully");
