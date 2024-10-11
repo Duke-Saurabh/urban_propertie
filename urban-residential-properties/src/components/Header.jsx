@@ -25,7 +25,8 @@ const Header = () => {
       <div className="toggle-button" onClick={toggleNav}>
         &#9776; 
       </div>
-      <div className="header-logo">Urban Properties</div>
+      <div className="header-logo">
+      <h2>Urban Properties</h2></div>
       <div className="header-content">   
         
         <nav className={`navigation ${isNavOpen ? 'open' : 'close'}`}>
