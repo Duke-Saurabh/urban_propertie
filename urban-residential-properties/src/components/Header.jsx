@@ -37,7 +37,7 @@ const Header = () => {
             {isAuthenticated && (<li className="navigation-item"><a href="/profile">Profile</a></li>)}
             {!isAuthenticated && (<li className="navigation-item"><a href="/login">Login</a></li>)}
             {isAuthenticated && (<li className="navigation-item"><a onClick={handleLogout}>Logout</a></li>)}
-            <li className="navigation-item"><a href="/signup">Signup</a></li>
+            {!isAuthenticated && (<li className="navigation-item"><a href="/signup">Signup</a></li>)}
           </ul>
         </nav>
       </div>
